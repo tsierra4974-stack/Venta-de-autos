@@ -1,0 +1,105 @@
+/* Estilos de AutoCatálogo - proyecto de medio ciclo */
+:root {
+  --azul: #1a3c6e;
+  --azul-oscuro: #10284d;
+  --fondo: #f0f0f0;
+  --texto: #222222;
+  --gris: #444444;
+  --borde: #aaaaaa;
+  --error: #a00000;
+  --foco: #0b4fc4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+.contenedor { width: 90%; max-width: 1100px; margin: 0 auto; }
+h1 { margin-top: 24px; }
+a { color: var(--azul); }
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+/* para ocultar texto solo visualmente (lo leen los lectores de pantalla) */
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.salto { position: absolute; left: 8px; top: -60px; background: #fff; padding: 8px 12px; }
+.salto:focus { top: 8px; }
+
+/* Cabecera y menú con Flexbox */
+.cabecera { background: var(--azul); color: #fff; }
+.cabecera :focus-visible { outline-color: #fff; }
+.barra { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 12px 0; }
+.logo { margin: 0; font-size: 1.5rem; font-weight: bold; }
+.menu { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.menu a { display: block; padding: 8px 14px; color: #fff; text-decoration: none; }
+.menu a:hover { background: var(--azul-oscuro); }
+.menu a[aria-current="page"] { background: #fff; color: var(--azul-oscuro); font-weight: bold; }
+.menu-boton { display: none; font-size: 1rem; background: none; color: #fff; border: 2px solid #fff; padding: 6px 14px; cursor: pointer; }
+
+/* Filtros */
+.filtros { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin: 20px 0; }
+.campo { display: flex; flex-direction: column; margin-bottom: 14px; }
+.filtros .campo { margin-bottom: 0; }
+label { font-weight: bold; margin-bottom: 4px; }
+input, select, textarea { font-size: 1rem; font-family: inherit; padding: 8px; border: 2px solid var(--borde); background: #fff; color: var(--texto); }
+
+/* Catálogo con Grid */
+.rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; list-style: none; padding: 0; margin: 0; }
+.tarjeta { background: #fff; border: 1px solid var(--borde); display: flex; flex-direction: column; }
+.tarjeta-marca { display: flex; align-items: center; justify-content: center; height: 90px; color: #fff; font-size: 1.6rem; font-weight: bold; }
+.t-Sedán { background: #1a3c6e; }
+.t-Hatchback { background: #2e6b3a; }
+.t-SUV { background: #6b3a1a; }
+.t-Camioneta { background: #444444; }
+.t-Deportivo { background: #8a1c1c; }
+.tarjeta-cuerpo { padding: 12px; display: flex; flex-direction: column; flex: 1; }
+.tarjeta h3 { margin: 0 0 8px; }
+.tarjeta p { margin: 0 0 6px; color: var(--gris); }
+.tarjeta .boton { margin-top: auto; }
+
+/* Botones */
+.boton { display: inline-block; font-size: 1rem; font-family: inherit; text-align: center; text-decoration: none; padding: 9px 16px; background: var(--azul); color: #fff; border: 2px solid var(--azul); cursor: pointer; }
+.boton:hover { background: var(--azul-oscuro); border-color: var(--azul-oscuro); }
+.boton-sec { background: #fff; color: var(--azul-oscuro); }
+.boton-sec:hover { background: #dde6f3; color: var(--azul-oscuro); }
+.quitar { font-size: 1rem; font-family: inherit; background: none; border: none; color: var(--error); text-decoration: underline; cursor: pointer; }
+
+.favoritos { background: #fff; border: 1px solid var(--borde); padding: 8px 20px 16px; margin: 32px 0; }
+
+/* Formulario */
+form { max-width: 600px; }
+fieldset { background: #fff; border: 1px solid var(--borde); margin-bottom: 20px; padding: 12px 16px; }
+legend { font-weight: bold; }
+.error { color: var(--error); margin: 4px 0 0; }
+[aria-invalid="true"] { border-color: var(--error); }
+.campo-check { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px; }
+.campo-check input { width: 20px; height: 20px; }
+.campo-check .error { flex-basis: 100%; }
+.resumen, .exito { max-width: 600px; padding: 10px 14px; border: 2px solid; }
+.resumen { background: #fdeaea; color: var(--error); border-color: var(--error); }
+.exito { background: #e6f2e6; color: #1b4d1b; border-color: #1b4d1b; }
+
+/* Página Nosotros */
+.tabla { border-collapse: collapse; background: #fff; width: 100%; max-width: 600px; }
+.tabla caption { text-align: left; font-weight: bold; padding-bottom: 6px; }
+.tabla th, .tabla td { border: 1px solid var(--borde); padding: 8px; text-align: left; }
+details { background: #fff; border: 1px solid var(--borde); padding: 10px 14px; margin-bottom: 8px; max-width: 700px; }
+summary { cursor: pointer; font-weight: bold; }
+
+.pie { background: var(--azul-oscuro); color: #fff; margin-top: 40px; padding: 16px 0; }
+.pie p { margin: 0; }
+
+/* Diseño adaptable para celulares */
+@media (max-width: 640px) {
+  .menu-boton { display: inline-block; }
+  nav { width: 100%; }
+  .menu { display: none; flex-direction: column; }
+  .menu.abierto { display: flex; }
+  .filtros { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
