@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Raíz Vivero</title>
+  <meta name="description" content="Formulario de contacto del vivero.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <p class="marca">Raíz Vivero</p>
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav aria-label="Principal">
+        <ul id="menu" class="menu">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido" class="contenedor">
+    <h1>Contáctanos</h1>
+    <p class="intro">Cuéntanos qué necesitas y te respondemos por correo o por mensaje. Todos los campos son obligatorios.</p>
+    <p id="resumen" class="resumen" role="alert" tabindex="-1" hidden></p>
+    <p id="exito" class="exito" role="status" tabindex="-1" hidden></p>
+    <form id="formulario" novalidate>
+      <fieldset>
+        <legend>Tus datos</legend>
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" aria-describedby="error-nombre" required>
+          <p class="error" id="error-nombre"></p>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="error-correo" required>
+          <p class="error" id="error-correo"></p>
+        </div>
+        <div class="campo">
+          <label for="telefono">Celular (10 dígitos, empieza con 09)</label>
+          <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="numeric" maxlength="10" aria-describedby="error-telefono" required>
+          <p class="error" id="error-telefono"></p>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Tu consulta</legend>
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto" aria-describedby="error-asunto" required>
+            <option value="">Elige una opción</option>
+            <option value="Cotización">Cotización de mi lista</option>
+            <option value="Cuidados">Consulta sobre cuidados</option>
+            <option value="Entrega">Entrega a domicilio</option>
+          </select>
+          <p class="error" id="error-asunto"></p>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje (mínimo 20 caracteres)</label>
+          <textarea id="mensaje" name="mensaje" rows="5" aria-describedby="error-mensaje" required></textarea>
+          <p class="error" id="error-mensaje"></p>
+        </div>
+        <p><strong>Productos de tu lista:</strong> <span id="interes">ninguno</span></p>
+        <div class="campo campo-check">
+          <input type="checkbox" id="acepta" name="acepta" aria-describedby="error-acepta" required>
+          <label for="acepta">Acepto que usen mis datos solo para responder esta consulta.</label>
+          <p class="error" id="error-acepta"></p>
+        </div>
+      </fieldset>
+      <button type="submit" class="boton">Enviar consulta</button>
+    </form>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <p>&copy; 2026 Raíz Vivero. Proyecto académico de Desarrollo Basado en Plataformas.</p>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/contacto.js" defer></script>
+</body>
+</html>
