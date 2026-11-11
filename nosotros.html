@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosotros | AutoCatálogo</title>
+  <meta name="description" content="Información sobre el proyecto AutoCatálogo.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <p class="logo">AutoCatálogo</p>
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav aria-label="Principal">
+        <ul id="menu" class="menu">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido" class="contenedor">
+    <h1>Sobre este proyecto</h1>
+    <p>AutoCatálogo es una aplicación web hecha como proyecto de medio ciclo. Muestra autos reales de varias marcas y permite enviar una consulta mediante un formulario.</p>
+
+    <section aria-labelledby="t-hecho">
+      <h2 id="t-hecho">Con qué está hecha</h2>
+      <ul>
+        <li>HTML5 para la estructura de las páginas.</li>
+        <li>CSS3 con Flexbox, Grid y media queries para que se vea bien en celular.</li>
+        <li>JavaScript puro para el buscador, los filtros, los favoritos y la validación del formulario.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="t-integrantes">
+      <h2 id="t-integrantes">Integrantes</h2>
+      <table class="tabla">
+        <caption>Equipo de trabajo</caption>
+        <thead><tr><th scope="col">Integrante</th><th scope="col">Tarea principal</th></tr></thead>
+        <tbody>
+          <tr><td>Nombre del integrante 1</td><td>Estructura HTML</td></tr>
+          <tr><td>Nombre del integrante 2</td><td>Estilos CSS</td></tr>
+          <tr><td>Nombre del integrante 3</td><td>JavaScript y pruebas</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="t-faq">
+      <h2 id="t-faq">Preguntas frecuentes</h2>
+      <details><summary>¿Los autos están a la venta?</summary><p>No. Es un proyecto académico, por eso el catálogo no incluye precios y la información es solo referencial.</p></details>
+      <details><summary>¿Qué pasa cuando envío el formulario?</summary><p>El formulario solo valida los datos y muestra un mensaje de confirmación. No se envía a ningún servidor.</p></details>
+      <details><summary>¿Se guardan mis favoritos?</summary><p>Sí, se guardan en tu navegador para que los veas también en la página de contacto.</p></details>
+    </section>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Proyecto de medio ciclo - Desarrollo Basado en Plataformas. La información de los autos es referencial.</p>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

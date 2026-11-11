@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo | AutoCatálogo</title>
+  <meta name="description" content="Catálogo de autos reales con búsqueda y filtros.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <p class="logo">AutoCatálogo</p>
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav aria-label="Principal">
+        <ul id="menu" class="menu">
+          <li><a href="index.html" aria-current="page">Catálogo</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido" class="contenedor">
+    <h1>Catálogo de autos</h1>
+    <p>Busca un auto por su nombre o filtra por tipo y combustible. Puedes guardar tus favoritos y luego pedir información en la página de contacto.</p>
+
+    <section aria-labelledby="t-filtros" class="filtros">
+      <h2 id="t-filtros" class="oculto">Buscar y filtrar</h2>
+      <div class="campo">
+        <label for="buscar">Buscar por marca o modelo</label>
+        <input type="search" id="buscar" name="buscar" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="tipo">Tipo de auto</label>
+        <select id="tipo" name="tipo">
+          <option value="todos">Todos</option>
+          <option value="Sedán">Sedán</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="SUV">SUV</option>
+          <option value="Camioneta">Camioneta</option>
+          <option value="Deportivo">Deportivo</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="combustible">Combustible</label>
+        <select id="combustible" name="combustible">
+          <option value="todos">Todos</option>
+          <option value="Gasolina">Gasolina</option>
+          <option value="Diésel">Diésel</option>
+          <option value="Híbrido">Híbrido</option>
+          <option value="Eléctrico">Eléctrico</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="estado" role="status"></p>
+    <section aria-labelledby="t-autos">
+      <h2 id="t-autos" class="oculto">Lista de autos</h2>
+      <ul id="autos" class="rejilla"></ul>
+    </section>
+
+    <section aria-labelledby="t-fav" class="favoritos">
+      <h2 id="t-fav">Mis favoritos</h2>
+      <p id="fav-vacio">Todavía no has agregado ningún auto.</p>
+      <ul id="favoritos"></ul>
+      <p>
+        <button type="button" id="vaciar" class="boton boton-sec">Vaciar favoritos</button>
+        <a class="boton" href="contacto.html">Pedir información</a>
+      </p>
+    </section>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Proyecto de medio ciclo - Desarrollo Basado en Plataformas. La información de los autos es referencial.</p>
+    </div>
+  </footer>
+  <script src="js/datos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</body>
+</html>
